@@ -7,6 +7,7 @@ const app = express();
 //middle are
 
 const workRoutes = require('./routes/workout');
+const userRoutes = require('./routes/user')
 
 app.use((req, res, next) => {
  console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/api/workouts',workRoutes);
+app.use('/api/user',userRoutes);
 //connect to db
 const uri = "mongodb+srv://anusha:7777@cluster0.6gulssr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
